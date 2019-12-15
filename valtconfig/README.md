@@ -46,6 +46,10 @@ First, you need to set two environment variables to point the Vault CLI to the V
 	
 	> http://127.0.0.1:8200
 	
+* Refresh the Configuration after changing the vault configuration key
+	Hit the below post url in the postman. 
+	http://localhost:8080/actuator/refresh
+	
 **Thanks**
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
