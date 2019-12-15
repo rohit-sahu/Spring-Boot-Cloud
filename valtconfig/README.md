@@ -19,7 +19,8 @@ After you install Vault, launch it in a console window. This command also starts
 
 	> vault server --dev --dev-root-token-id="00000000-0000-0000-0000-000000000000"
 
-###Store configuration in Vault
+###Store configuration in Vault:
+
 Vault is a secrets management system allowing you to store sensitive data which is encrypted at rest. It’s ideal to store sensitive configuration details such as passwords, encryption keys, API keys.
 
 Launch another console window to store application configuration in Vault using the Vault command line.
