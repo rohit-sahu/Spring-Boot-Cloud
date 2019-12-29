@@ -1,4 +1,4 @@
-# spring-boot-vault-config
+# Spring Boot Vault Config
 Spring boot with Restful Example and Dynamic config (centralize configuration) Enabled using Vault.
 
 ### Install and launch HashiCorp Vault
