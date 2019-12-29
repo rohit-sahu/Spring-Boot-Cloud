@@ -17,7 +17,7 @@ For other systems with package management, such as Redhat, Ubuntu, Debian, CentO
 
 After you install Vault, launch it in a console window. This command also starts up a server process.
 
-	> vault server --dev --dev-root-token-id="00000000-0000-0000-0000-000000000000"
+	vault server --dev --dev-root-token-id="00000000-0000-0000-0000-000000000000"
 
 ### Store configuration in Vault:
 Vault is a secrets management system allowing you to store sensitive data which is encrypted at rest. It’s ideal to store sensitive configuration details such as passwords, encryption keys, API keys.
@@ -26,10 +26,10 @@ Launch another console window to store application configuration in Vault using 
 
 First, you need to set two environment variables to point the Vault CLI to the Vault endpoint and provide an authentication token.
 
-		> export export VAULT_TOKEN="00000000-0000-0000-0000-000000000000"
-		> export VAULT_ADDR="http://127.0.0.1:8200"
-		or
-		> set VAULT_ADDR=http://127.0.0.1:8200
+	> export export VAULT_TOKEN="00000000-0000-0000-0000-000000000000"
+	> export VAULT_ADDR="http://127.0.0.1:8200"
+	or
+	> set VAULT_ADDR=http://127.0.0.1:8200
 
 * Now you can store a configuration key-value pairs inside Vault:
 
