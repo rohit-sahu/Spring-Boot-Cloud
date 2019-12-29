@@ -33,14 +33,16 @@ First, you need to set two environment variables to point the Vault CLI to the V
 
 * Now you can store a configuration key-value pairs inside Vault:
 
-	> vault kv put secret/gs-vault-config example.username=demouser example.password=demopassword
+	> vault kv put secret/spring-vault-config example.username=demouser example.password=demopassword
 	
-	> vault kv put secret/gs-vault-config/cloud example.username=clouduser example.password=cloudpassword
+	> vault kv put secret/spring-vault-config/cloud example.username=clouduser example.password=cloudpassword
 
 * Vault commands:
 
 	> vault kv get secret/spring-vault-config
+	
 	> vault kv delete secret/spring-vault-config
+	
 	> vault secrets list
 	
 * Vault UI:
