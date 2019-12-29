@@ -9,9 +9,9 @@ Spring boot with Restful Example and Dynamic config (centralize configuration) E
 
 Alternatively, download Vault for your operating system from [Vault_download]:
 
-	> [Vault_zip]
+	[Vault_zip]
 
-	> unzip vault_1.2.1_darwin_amd64.zip
+	unzip vault_1.2.1_darwin_amd64.zip
 
 For other systems with package management, such as Redhat, Ubuntu, Debian, CentOS, and Windows, see instructions at [Vault_docs].
 
@@ -26,10 +26,10 @@ Launch another console window to store application configuration in Vault using 
 
 First, you need to set two environment variables to point the Vault CLI to the Vault endpoint and provide an authentication token.
 
-	> export export VAULT_TOKEN="00000000-0000-0000-0000-000000000000"
-	> export VAULT_ADDR="http://127.0.0.1:8200"
+	export export VAULT_TOKEN="00000000-0000-0000-0000-000000000000"
+	export VAULT_ADDR="http://127.0.0.1:8200"
 	or
-	> set VAULT_ADDR=http://127.0.0.1:8200
+	set VAULT_ADDR=http://127.0.0.1:8200
 
 * Now you can store a configuration key-value pairs inside Vault:
 
