@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: git-config-server
+server:
+  port: 8083
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8671/eureka/
+    instance:
+      hostname: localhost
