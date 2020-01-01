@@ -14,6 +14,6 @@ public class MessageController {
 
     @GetMapping("/message")
     public String getConfigMessage() {
-        return "";
+        return message;
     }
 }
