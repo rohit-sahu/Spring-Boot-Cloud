@@ -1,21 +1,19 @@
-# This default profile is used when running a single instance completely standalone:
----
 spring:
   application:
     name: eureka-service
   /profiles:
+    profiles: replicas1
     active: replicas1
 server:
-  port: 8671
+  port: 8761
 eureka:
-  datacenter: default
-  environment: default
   instance:
     hostname: localhost
+    appname: eureka-cluster
   client:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://replicas2/eureka/,http://replicas3/eureka/
     server:
       waitTimeInMsWhenSyncEmpty: 0
