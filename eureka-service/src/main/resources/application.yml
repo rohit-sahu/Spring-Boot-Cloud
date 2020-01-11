@@ -5,7 +5,7 @@ spring:
     name: eureka-service
   /profiles:
     profiles: default
-    active: default
+    active: replicas1
 server:
   port: 8671
 eureka:
@@ -20,6 +20,19 @@ eureka:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
     server:
       waitTimeInMsWhenSyncEmpty: 0
+management:
+  endpoint:
+    health:
+      enabled: true
+      show-details: always
+    shutdown:
+      enabled: true
+  endpoints:
+    web:
+      base-path: /
+      # By default, only 'health' and 'info' are accessible via web
+      exposure:
+        include: '*'
 
 # replicas1, replicas2, and replicas3 illustrate running 3 intercommunicating instances.
 # This example has them running side-by-side on localhost
@@ -40,16 +53,31 @@ spring:
 server:
   port: 8761
 eureka:
+  datacenter: replicas1
+  environment: replicas1
   instance:
-    hostname: localhost
+    hostname: replicas1
     appname: eureka-cluster
   client:
-    registerWithEureka: false
-    fetchRegistry: false
+    registerWithEureka: true
+    fetchRegistry: true
     serviceUrl:
-      defaultZone: http://replicas2/eureka/,http://replicas3/eureka/
+      defaultZone: http://replicas2:8762/eureka/,http://replicas3:8763/eureka/
     server:
       waitTimeInMsWhenSyncEmpty: 0
+management:
+  endpoint:
+    health:
+      enabled: true
+      show-details: always
+    shutdown:
+      enabled: true
+  endpoints:
+    web:
+      base-path: /
+      # By default, only 'health' and 'info' are accessible via web
+      exposure:
+        include: '*'
 ---
 spring:
   application:
@@ -60,16 +88,31 @@ spring:
 server:
   port: 8762
 eureka:
+  datacenter: replicas2
+  environment: replicas2
   instance:
-    hostname: localhost
+    hostname: replicas2
     appname: eureka-cluster
   client:
-    registerWithEureka: false
-    fetchRegistry: false
+    registerWithEureka: true
+    fetchRegistry: true
     serviceUrl:
-      defaultZone: http://replicas1/eureka/,http://replicas3/eureka/
+      defaultZone: http://replicas1:8761/eureka/,http://replicas3:8763/eureka/
     server:
       waitTimeInMsWhenSyncEmpty: 0
+management:
+  endpoint:
+    health:
+      enabled: true
+      show-details: always
+    shutdown:
+      enabled: true
+  endpoints:
+    web:
+      base-path: /
+      # By default, only 'health' and 'info' are accessible via web
+      exposure:
+        include: '*'
 ---
 spring:
   application:
@@ -80,13 +123,28 @@ spring:
 server:
   port: 8763
 eureka:
+  datacenter: replicas3
+  environment: replicas3
   instance:
-    hostname: localhost
+    hostname: replicas3
     appname: eureka-cluster
   client:
-    registerWithEureka: false
-    fetchRegistry: false
+    registerWithEureka: true
+    fetchRegistry: true
     serviceUrl:
-      defaultZone: http://replicas1/eureka/,http://replicas2/eureka/
+      defaultZone: http://replicas1:8761/eureka/,http://replicas2:8762/eureka/
     server:
       waitTimeInMsWhenSyncEmpty: 0
+management:
+  endpoint:
+    health:
+      enabled: true
+      show-details: always
+    shutdown:
+      enabled: true
+  endpoints:
+    web:
+      base-path: /
+      # By default, only 'health' and 'info' are accessible via web
+      exposure:
+        include: '*'
