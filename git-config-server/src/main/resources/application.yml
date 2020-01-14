@@ -7,8 +7,9 @@ spring:
   /profiles:
     profiles: default
     active: dev
-server:
-  port: 8083
+# It will start server conventional port 8888
+  config:
+    name: configserver
 management:
   endpoint:
     health:
