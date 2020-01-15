@@ -1,9 +1,8 @@
 spring:
   application:
     name: eureka-service
-  /profiles:
-    profiles: replicas2
-    active: replicas2
+  profiles: replicas2
+  profiles.active: replicas2
 server:
   port: 8762
 eureka:

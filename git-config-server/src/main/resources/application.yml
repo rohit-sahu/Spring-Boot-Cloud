@@ -4,9 +4,8 @@ spring:
   jackson:
     serialization:
       indent_output: true
-  /profiles:
-    profiles: default
-    active: dev
+  profiles: default
+  profiles.active: dev
 # It will start server conventional port 8888
   config:
     name: configserver
@@ -16,6 +15,8 @@ management:
       enabled: true
       show-details: always
     shutdown:
+      enabled: true
+    info:
       enabled: true
   endpoints:
     web:

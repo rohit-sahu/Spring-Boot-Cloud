@@ -4,9 +4,8 @@ spring:
   jackson:
     serialization:
       indent_output: true
-  /profiles:
-    profiles: dev
-    active: dev
+  profiles: dev
+  profiles.active: dev
 server:
   port: 8083
 management:
