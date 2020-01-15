@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: eureka-service
+  profiles: replicas3
+  profiles.active: replicas3
+server:
+  port: 8763
+eureka:
+  datacenter: replicas3
+  environment: replicas3
+  instance:
+    hostname: replicas3
+    appname: eureka-cluster
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://replicas1:8761/eureka/,http://replicas2:8762/eureka/
+    server:
+      waitTimeInMsWhenSyncEmpty: 0
+management:
+  endpoint:
+    health:
+      enabled: true
+      show-details: always
+    shutdown:
+      enabled: true
+  endpoints:
+    web:
+      base-path: /
+      # By default, only 'health' and 'info' are accessible via web
+      exposure:
+        include: '*'

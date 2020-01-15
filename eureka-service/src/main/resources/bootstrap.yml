@@ -1,9 +1,8 @@
 spring:
   application:
     name: eureka-service
-  /profiles:
-    profiles: default
-    active: replicas1
+  profiles: default
+  profiles.active: replicas1
   cloud:
     config:
       uri: http://localhost:8888
