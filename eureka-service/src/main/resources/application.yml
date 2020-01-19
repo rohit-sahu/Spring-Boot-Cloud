@@ -41,6 +41,16 @@ management:
 # java -jar -Dspring.profiles.active=replicas1 eureka-service-0.0.1-SNAPSHOT.jar
 # java -jar -Dspring.profiles.active=replicas2 eureka-service-0.0.1-SNAPSHOT.jar
 # java -jar -Dspring.profiles.active=replicas3 eureka-service-0.0.1-SNAPSHOT.jar
+
+# For Spring-Boot 2.x
+# mvn spring-boot:run -Dspring-boot.run.profiles=replicas1
+# mvn spring-boot:run -Dspring-boot.run.profiles=replicas2
+# mvn spring-boot:run -Dspring-boot.run.profiles=replicas3
+
+# For Spring-Boot 1.x
+# mvn spring-boot:run -Dspring.profiles.active=replicas1
+# mvn spring-boot:run -Dspring.profiles.active=replicas2
+# mvn spring-boot:run -Dspring.profiles.active=replicas3
 ---
 spring:
   application:
